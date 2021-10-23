@@ -1,42 +1,9 @@
 import express from 'express';
 var app = express();
-function (req, res) {
-    app.get('Hello Express')
-  }
-console.log('Hello World')
+function HelloExpress(req, res) {
+  req.get('Hello Express');
+}
+console.log(HelloExpress());
+console.log('Hello World');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- export default app;
+export default app;
