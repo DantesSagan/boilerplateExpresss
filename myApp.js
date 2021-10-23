@@ -1,5 +1,8 @@
-var express = require('express');
+import express from 'express';
 var app = express();
+function (req, res) {
+    app.get('Hello Express')
+  }
 console.log('Hello World')
 
 
@@ -36,4 +39,4 @@ console.log('Hello World')
 
 
 
- module.exports = app;
+ export default app;
