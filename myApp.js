@@ -8,7 +8,7 @@ app.get('/json', (req, res) => {
     message: 'Hello json',
   });
 });
-app.use('/public', express.static(__dirname + '/public'));
+// app.use('/public', express.static(__dirname + '/public'));
 
 console.log('Hello World');
 
