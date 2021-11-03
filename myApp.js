@@ -1,4 +1,5 @@
 console.log(require('dotenv').config());
+const mySecret = process.env['MESSAGE_STYLE'];
 var express = require('express');
 var app = express();
 // app.get('/', (req, res) => {
