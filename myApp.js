@@ -7,10 +7,10 @@ var app = express();
 // });
 
 app.get('/json', (req, res) => {
-  var response =
-    process.env.MESSAGE_STYLE === 'uppercase'
-      ? (response = 'Hello json'.toUpperCase())
-      : (response = 'HELLO JSON');
+  var response = 'Hello json'.toUpperCase();
+  process.env.MESSAGE_STYLE === 'uppercase'
+    ? (response = 'Hello json'.toUpperCase())
+    : (response = 'HELLO JSON');
 
   res.json({
     message: mySecret,
