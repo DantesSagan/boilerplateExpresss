@@ -13,7 +13,7 @@ app.get('/json', (req, res) => {
     : (response = 'HELLO JSON');
 
   res.json({
-    message: mySecret,
+    message: response,
   });
   console.log(mySecret);
 });
