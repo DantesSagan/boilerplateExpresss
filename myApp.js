@@ -1,4 +1,4 @@
-import('dotenv');
+console.log(require('dotenv').config({ path: __dirname + '/.env' }));
 var express = require('express');
 var app = express();
 // app.get('/', (req, res) => {
