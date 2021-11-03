@@ -5,14 +5,14 @@ var app = express();
 //   res.sendFile(__dirname + '/views/index.html');
 // });
 var response = 'Hello json'.toUpperCase();
+if (process.env.MESSAGE_STYLE === 'uppercase') {
+  response = 'Hello json'.toUpperCase();
+} else {
+  response = 'Hello json';
+}
 app.get('/json', (req, res) => {
-  if ((process.env.MESSAGE_STYLE === 'uppercase')) {
-    response = 'Hello json'.toUpperCase();
-  } else {
-    response = 'Hello json';
-  }
   res.json({
-    message: 'Hello json',
+    message: response,
   });
 });
 // app.use('/public', express.static(__dirname + '/public'));
