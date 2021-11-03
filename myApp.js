@@ -1,4 +1,4 @@
-console.log(require('dotenv').config({ path: __dirname + '/.env' }));
+require('dotenv').config();
 const mySecret = process.env['MESSAGE_STYLE'];
 var express = require('express');
 var app = express();
