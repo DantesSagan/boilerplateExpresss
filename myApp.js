@@ -13,9 +13,9 @@ app.get('/json', (req, res) => {
       : (response = 'HELLO JSON');
 
   res.json({
-    message: response,
+    message: mySecret,
   });
-  console.log(response);
+  console.log(mySecret);
 });
 // app.use('/public', express.static(__dirname + '/public'));
 
