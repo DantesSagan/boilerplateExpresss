@@ -1,9 +1,10 @@
-var dotenv = require('dotenv').config();
+require('dotenv').config();
 var express = require('express');
 var app = express();
 // app.get('/', (req, res) => {
 //   res.sendFile(__dirname + '/views/index.html');
 // });
+var response = 'Hello json'.toUpperCase();
 app.get('/json', (req, res) => {
   if ((process.env.MESSAGE_STYLE = 'uppercase')) {
     response = 'Hello json'.toUpperCase();
