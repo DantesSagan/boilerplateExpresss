@@ -7,15 +7,13 @@ var app = express();
 // });
 
 app.get('/json', (req, res) => {
-  var response = 'Hello json'.toUpperCase();
+  var response = { message: 'Hello json' };
   process.env.MESSAGE_STYLE === 'uppercase'
-    ? (response = 'Hello json'.toUpperCase())
+    ? (response.message = response.message.toUpperCase())
     : (response = 'HELLO JSON');
 
-  res.json({
-    message: response,
-  });
-  console.log(mySecret);
+  res.json(response);
+  console.log(response);
 });
 // app.use('/public', express.static(__dirname + '/public'));
 
