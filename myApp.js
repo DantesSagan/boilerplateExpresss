@@ -8,6 +8,14 @@ app.get('/', (req, res) => {
 
 app.use('/public', express.static(__dirname + '/public'));
 
+app.use('/user/:id', (req, res, next) => {
+  // var request = req.method + ' ' + req.path + ' - ' + req.ip;
+  console.log('GET ', req.method);
+  console.log('/json - ', req.path);
+  console.log('::ffff:127.0.0.1', req.ip);
+  next();
+});
+
 app.get('/json', (req, res) => {
   var response = { message: 'Hello json' };
   if (process.env.MESSAGE_STYLE === 'uppercase')
@@ -15,14 +23,6 @@ app.get('/json', (req, res) => {
 
   res.json(response);
   console.log(response);
-});
-
-app.use('/user/:id', (req, res, next) => {
-  // var request = req.method + ' ' + req.path + ' - ' + req.ip;
-  console.log('GET ', req.method);
-  console.log('/json - ', req.path);
-  console.log('::ffff:127.0.0.1', req.ip);
-  next();
 });
 
 module.exports = app;
