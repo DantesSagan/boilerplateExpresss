@@ -32,11 +32,10 @@ app.get(
   '/now',
   (req, res, next) => {
     req.time = new Date().toString();
-
     next();
   },
   (req, res) => {
-    setTimeout({ time: req.time });
+    res.send({ time: req.time });
   }
 );
 
