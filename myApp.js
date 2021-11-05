@@ -18,10 +18,7 @@ app.get('/json', (req, res) => {
 });
 
 app.post((req, res, next) => {
-  console.log("i'm a middleware...");
-  req.method('GET');
-  req.path('/json');
-  req.ip('::ffff:127.0.0.1');
+  console.log(req.method('GET'), req.path('/json'), req.ip('::ffff:127.0.0.1'));
   next();
 });
 
