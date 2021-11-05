@@ -17,9 +17,9 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
-app.get((req, res, next) => {
-  var request = req.method + ' ' + req.path;
-  +' - ' + req.ip;
+app.use(function middleware(req, res, next) {
+  var request = req.method('GET') + ' ' + req.path('/json');
+  +' - ' + req.ip('::ffff:127.0.0.1');
   console.log(request);
   next();
 });
