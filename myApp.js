@@ -8,11 +8,12 @@ app.get('/', (req, res) => {
 
 app.use('/public', express.static(__dirname + '/public'));
 
-app.use('/user/:id', (req, res, next) => {
-  // var request = req.method + ' ' + req.path + ' - ' + req.ip;
-  console.log('GET ', req.method);
-  console.log('/json - ', req.path);
-  console.log('::ffff:127.0.0.1', req.ip);
+app.use((req, res, next) => {
+  var request = req.method + ' ' + req.path + ' - ' + req.ip;
+  console.log('GET /json - ::ffff:127.0.0.1', request);
+  // console.log('GET ', req.method);
+  // console.log('/json - ', req.path);
+  // console.log('::ffff:127.0.0.1', req.ip);
   next();
 });
 
