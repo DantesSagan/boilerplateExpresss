@@ -28,4 +28,19 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
+app.get(
+  '/now',
+  (req, res, next) => {
+    req.time = new Date().toString();
+
+    next();
+  },
+  (req, res) => {
+    let time = {
+      time: req.time,
+    };
+    return time;
+  }
+);
+
 module.exports = app;
