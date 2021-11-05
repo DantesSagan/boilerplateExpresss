@@ -36,10 +36,7 @@ app.get(
     next();
   },
   (req, res) => {
-    let time = {
-      time: req.time,
-    };
-    return time;
+    setTimeout({ time: req.time });
   }
 );
 
