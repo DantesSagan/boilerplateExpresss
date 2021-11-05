@@ -17,10 +17,11 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
-app.use(function middleware(req, res, next) {
-  var request = req.method + ' ' + req.path;
-  +' - ' + req.ip;
-  console.log(request);
+app.get((req, res, next) => {
+  // var request = req.method + ' ' + req.path + ' - ' + req.ip;
+  req.method('GET ');
+  req.path('/json - ');
+  req.ip('::ffff:127.0.0.1');
   next();
 });
 
