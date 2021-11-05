@@ -17,11 +17,11 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
-app.get('/', (req, res, next) => {
+app.use('/user/:id', (req, res, next) => {
   // var request = req.method + ' ' + req.path + ' - ' + req.ip;
-  req.method('GET ');
-  req.path('/json - ');
-  req.ip('::ffff:127.0.0.1');
+  console.log('GET ', req.method);
+  console.log('/json - ', req.path);
+  console.log('::ffff:127.0.0.1', req.ip);
   next();
 });
 
