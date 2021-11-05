@@ -17,7 +17,7 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
-app.get((req, res, next) => {
+app.get('/', (req, res, next) => {
   // var request = req.method + ' ' + req.path + ' - ' + req.ip;
   req.method('GET ');
   req.path('/json - ');
