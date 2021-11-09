@@ -39,10 +39,11 @@ app.get(
   }
 );
 
-app.get('/:freecodecamp/FCC', (req, res) => {
-  const { freecodecamp } = req.params;
+app.get('/:word/echo', (req, res) => {
+  const { word } = req.params;
   res.json({
-    FCC: freecodecamp,
+    echo: word,
   });
+  console.log(word)
 });
 module.exports = app;
