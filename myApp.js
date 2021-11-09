@@ -1,10 +1,14 @@
+// Use the .env File
 require('dotenv').config();
 const mySecret = process.env['MESSAGE_STYLE'];
+const { json } = require('body-parser');
 var express = require('express');
 var app = express();
 
+// Serve Static Assets
 app.use('/public', express.static(__dirname + '/public'));
 
+// Implement a Root-Level Request Logger MiddlewarePassed
 app.use((req, res, next) => {
   // var request = req.method + ' ' + req.path + ' - ' + req.ip;
   // console.log('GET /json - ::ffff:127.0.0.1', request);
@@ -15,10 +19,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve an HTML FilePassed
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
-
+// Serve JSON on a Specific RoutePassed and Use the .env File
 app.get('/json', (req, res) => {
   var response = { message: 'Hello json' };
   if (process.env.MESSAGE_STYLE === 'uppercase')
@@ -28,6 +33,7 @@ app.get('/json', (req, res) => {
   console.log(response);
 });
 
+// Chain Middleware to Create a Time ServerPassed
 app.get(
   '/now',
   (req, res, next) => {
@@ -39,11 +45,23 @@ app.get(
   }
 );
 
+// Get Route Parameter Input from the ClientPassed
 app.get('/:word/echo', (req, res) => {
   const { word } = req.params;
   res.json({
     echo: word,
   });
-  console.log(word)
+  console.log(word);
+});
+
+app.get('/name', (req, res) => {
+  var firstname = req.query.first;
+  var lastname = req.query.last;
+  const { first: firstname, last: lastname } = req.query;
+
+  res.json({
+    first: firstname,
+    last: lastname,
+  });
 });
 module.exports = app;
