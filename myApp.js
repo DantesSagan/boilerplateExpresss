@@ -42,7 +42,7 @@ app.get(
 app.get('/:freecodecamp/FCC', (req, res) => {
   const { freecodecamp } = req.params;
   res.json({
-    ehco: freecodecamp,
+    FCC: freecodecamp,
   });
 });
 module.exports = app;
