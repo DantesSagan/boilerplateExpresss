@@ -42,8 +42,7 @@ app.get(
 app.get('/:hello1/:helloJson1', (req, res) => {
   hello1 = req.params.hello1;
   helloJson1 = req.params.helloJson1;
-  req.url = '/:hello1/:helloJson1';
   let { hello1, helloJson1 } = req.params;
-  req.json(req.params);
+  res.json(req.params);
 });
 module.exports = app;
