@@ -42,7 +42,10 @@ app.get(
 app.get('/hello1/:hello1/helloJson1/:helloJson1', (req, res) => {
   hello1 = req.params.hello1;
   helloJson1 = req.params.helloJson1;
-  let params = { hello1: 'hello1', helloJson1: 'helloJson1' };
-  res.json(params);
+  let { hello1, helloJson1 } = req.params;
+  res.json({
+    hello1: 'hello1',
+    helloJson1: 'helloJson1',
+  });
 });
 module.exports = app;
