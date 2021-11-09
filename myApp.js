@@ -39,10 +39,11 @@ app.get(
   }
 );
 
-app.get('/:hello1/hello1/:helloJson1/helloJson1', (req, res) => {
-  hello1 = req.params.hello1;
-  helloJson1 = req.params.helloJson1;
-  const { hello1, helloJson1 } = req.params;
-  res.json(req.params);
+app.get(':word/echo', (req, res) => {
+  word = req.params.word;
+  const { word } = req.params;
+  res.json({
+    word: 'echo',
+  });
 });
 module.exports = app;
