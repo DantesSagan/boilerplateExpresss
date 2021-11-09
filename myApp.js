@@ -1,7 +1,5 @@
 // Use the .env File
 require('dotenv').config();
-const mySecret = process.env['MESSAGE_STYLE'];
-const { json } = require('body-parser');
 var express = require('express');
 var app = express();
 
