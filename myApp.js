@@ -1,5 +1,6 @@
 // Use the .env File
 require('dotenv').config();
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -58,5 +59,15 @@ app.get('/name', (req, res) => {
   res.json({
     name: `${firstname} ${lastname}`,
   });
+});
+
+app.use('/name', bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json(), (req, res, next) => {
+  req.body();
+  // let get = ('GET', req.method);
+  // let json = ('/path/subpath', req.path);
+  // let ip = ('HTTP/1.0', req.ip);
+  // console.log(get + ' ' + json + ' - ' + ip);
+  // next();
 });
 module.exports = app;
