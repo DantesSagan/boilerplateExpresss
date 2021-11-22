@@ -63,11 +63,11 @@ app.get('/name', (req, res) => {
 
 app.use(
   bodyParser.json()
-  let get = ('GET', req.method);
-  let json = ('/path/subpath', req.path);
-  let ip = ('HTTP/1.0', req.ip);
-  console.log(get + ' ' + json + ' - ' + ip);
-  next();
+  // let get = ('GET', req.method);
+  // let json = ('/path/subpath', req.path);
+  // let ip = ('HTTP/1.0', req.ip);
+  // console.log(get + ' ' + json + ' - ' + ip);
+  // next();
 );
 app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/path/subpath', (req, res, next) => {
